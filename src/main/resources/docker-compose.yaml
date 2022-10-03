@@ -1,0 +1,10 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.35.0
+    network_mode: host
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - /home/wayne/IdeaProjects/Prometheus-Monitoring/src/main/resources/prometheus.yaml:/home/wayne/IdeaProjects/Prometheus-Monitoring/src/main/resources/prometheus.yaml
+    command:
+      - "--config.file=/home/wayne/IdeaProjects/Prometheus-Monitoring/src/main/resources/prometheus.yaml"
